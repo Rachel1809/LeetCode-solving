@@ -8,4 +8,3 @@ class Solution:
             half_len -= freq[res]
             res += 1
         return res
-        
