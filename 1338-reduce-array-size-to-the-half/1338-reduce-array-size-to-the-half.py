@@ -1,6 +1,7 @@
 class Solution:
     def minSetSize(self, arr: List[int]) -> int:
-        freq = sorted(Counter(arr).values(), reverse=True)
+        new_arr = Counter(arr)
+        freq = sorted(new_arr.values(), reverse=True)
         res = 0
         half_len = len(arr) // 2
         while (half_len > 0):
