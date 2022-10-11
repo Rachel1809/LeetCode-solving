@@ -12,5 +12,6 @@ class Solution:
             
             if (min_key is not None and min_key >= root.val) or (max_key is not None and max_key <= root.val):
                 return False
+            
             return isVal(root.left, min_key, root.val) and isVal(root.right, root.val, max_key)
         return isVal(root, None, None)
