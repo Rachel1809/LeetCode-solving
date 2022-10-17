@@ -9,4 +9,6 @@ class Solution:
             if nums[i-1] != nums[i]:
                 nums[count] = nums[i]
                 count += 1
+                
+        nums = nums[:count+1]
         return count
