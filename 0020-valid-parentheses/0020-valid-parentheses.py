@@ -8,12 +8,12 @@ class Solution:
         stack = []
         for i in s:
             if i in tmpDict:
-                if stack != [] and tmpDict[i] == stack[0]:
-                    stack.pop(0)
+                if stack != [] and tmpDict[i] == stack[-1]:
+                    stack.pop(-1)
                 else:
                     return False
             else:
-                stack.insert(0, i)
+                stack.append(i)
         
         return stack == []
             
