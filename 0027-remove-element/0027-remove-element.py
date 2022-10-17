@@ -8,5 +8,4 @@ class Solution:
             if nums[i] != val:
                 nums[count] = nums[i]
                 count += 1
-        nums = nums[:count+1]      
         return count
