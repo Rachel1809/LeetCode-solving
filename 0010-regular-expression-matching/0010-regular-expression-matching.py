@@ -22,6 +22,7 @@ class Solution:
                 store[(i,j)] = dfs(i+1,j+1) 
                 return store[(i,j)]
             
+            store[(i, j)] = False
             return False
         
         return dfs(0,0)
