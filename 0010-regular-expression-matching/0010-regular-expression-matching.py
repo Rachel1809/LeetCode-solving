@@ -6,11 +6,9 @@ class Solution:
             if (i,j) in store:
                 return store[(i,j)]
             
-            if i >= len(s) and j >= len(p):
-                return True
-            
             if j >= len(p):
-                return False
+                return i >= len(s)
+            
             
             match = i < len(s) and (s[i] == p[j] or p[j] == '.')
             
