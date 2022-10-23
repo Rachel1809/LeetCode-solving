@@ -13,15 +13,16 @@ class Solution:
             match = i < m and (s[i] == p[j] or p[j] == '.')
             
             if j < n - 1 and p[j+1] == '*':
-                store[(i,j)] = dfs(i,j+2) or (match and dfs(i+1,j))
+                store[(i,j)] = (match and dfs(i+1,j)) or dfs(i,j+2)
                 return store[(i,j)]
             
             if match:
                 store[(i,j)] = dfs(i+1,j+1) 
-                return store[(i,j)]
-            
-            store[(i, j)] = False
-            return False
+            else:
+                store[(i, j)] = False
+                
+            return store[(i,j)]
+
         
         return dfs(0,0)
                       
