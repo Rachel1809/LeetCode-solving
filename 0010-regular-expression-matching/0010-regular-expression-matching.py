@@ -14,9 +14,8 @@ class Solution:
             
             if j < n - 1 and p[j+1] == '*':
                 store[(i,j)] = (match and dfs(i+1,j)) or dfs(i,j+2)
-                return store[(i,j)]
             
-            if match:
+            elif match:
                 store[(i,j)] = dfs(i+1,j+1) 
             else:
                 store[(i, j)] = False
