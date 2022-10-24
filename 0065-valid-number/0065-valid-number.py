@@ -11,25 +11,21 @@ class Solution:
                     return False
                 else:
                     sign = True
-                
+
             elif c in 'eE':
                 if not num or exp:
                     return False
                 else:
                     exp = True
-                    sign = False
-                    num = False
-                    dec = False
-            
+                    sign, num, dec = False, False , False
+
             elif c == '.':
                 if dec or exp:
                     return False
                 else:
                     dec = True
-                    
+
             else:
                 return False
-            
-            
-    
+
         return num
