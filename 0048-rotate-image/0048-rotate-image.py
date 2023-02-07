@@ -5,9 +5,7 @@ class Solution:
         """
         for i in range(len(matrix)):
             for j in range(i, len(matrix)):
-                tmp = matrix[i][j]
-                matrix[i][j] = matrix[j][i]
-                matrix[j][i] = tmp
+                matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]
 
         matrix[:] = [row[::-1] for row in matrix]
         
