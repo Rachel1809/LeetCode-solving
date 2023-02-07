@@ -9,6 +9,5 @@ class Solution:
                 matrix[i][j] = matrix[j][i]
                 matrix[j][i] = tmp
 
-        for row in matrix:
-            row[:] = row[::-1]
+        matrix[:] = [row[::-1] for row in matrix]
         
