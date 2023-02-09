@@ -1,12 +1,12 @@
 class Solution:
     def permuteUnique(self, nums: List[int]) -> List[List[int]]:
-        res = []
+        res = set()
 
         def permu(remain, tmp, res):
-            if not remain and tmp not in res:
-                res.append(tmp[:])
+            if not remain:
+                res.add(tuple(tmp))
             else:
                 for i in range(len(remain)):
                     permu(remain[:i] + remain[i+1:], tmp + [remain[i]], res)
-            return res
+            return list(res)
         return permu(nums, [], res)
