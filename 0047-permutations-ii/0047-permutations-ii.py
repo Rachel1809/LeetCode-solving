@@ -1,14 +1,24 @@
 class Solution:
     def permuteUnique(self, nums: List[int]) -> List[List[int]]:
-        res = []
+        results = []
+        def backtrack(comb, counter):
+            if len(comb) == len(nums):
+                # make a deep copy of the resulting permutation,
+                # since the permutation would be backtracked later.
+                results.append(list(comb))
+                return
 
-        def permu(remain, tmp, res):
-            if tmp not in res:
-                if not remain:
-                    res.append(tmp[:])
-                else:
-                    for i in range(len(remain)):
-                        permu(remain[:i] + remain[i+1:], tmp + [remain[i]], res)
-                    
-            return res
-        return permu(nums, [], res)
+            for num in counter:
+                if counter[num] > 0:
+                    # add this number into the current combination
+                    comb.append(num)
+                    counter[num] -= 1
+                    # continue the exploration
+                    backtrack(comb, counter)
+                    # revert the choice for the next exploration
+                    comb.pop()
+                    counter[num] += 1
+
+        backtrack([], Counter(nums))
+
+        return results
