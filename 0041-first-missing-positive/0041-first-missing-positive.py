@@ -6,8 +6,6 @@ class Solution:
             if nums[i] <= 0:
                 nums[i] = n+1
         
-        print(nums)
-        
         for i in range(n):
             index = abs(nums[i])
             
@@ -19,7 +17,6 @@ class Solution:
                 
             else:
                 nums[index-1] *= -1
-                
         print(nums)
         
         for i in range(n):
