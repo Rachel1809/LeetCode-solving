@@ -4,7 +4,7 @@ class KthLargest:
         self.k = k
         self.pq = nums
         heapify(self.pq)
-        for i in range(len(nums) - k):
+        for _ in range(len(nums) - k):
             heappop(self.pq)
 
     def add(self, val):
