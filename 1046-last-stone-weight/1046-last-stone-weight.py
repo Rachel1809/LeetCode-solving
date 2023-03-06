@@ -5,6 +5,8 @@ class Solution:
         heapify(st)
         
         while len(st) > 1:
-            heappush(st, heappop(st) - heappop(st))
+            first = heappop(st)
+            second = heappop(st)
+            heappush(st, first - second)
             
         return -st[0]
