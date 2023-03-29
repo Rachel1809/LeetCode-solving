@@ -8,7 +8,7 @@ class Solution:
         if head is None:
             return None
         prev, ne = None, None
-        while head != None:
+        while head:
             ne = head.next
             head.next = prev
             prev = head
