@@ -8,15 +8,15 @@ class Solution:
         if iLeft == len(nums) or nums[iLeft] != target:
             return [-1, -1]
                 
-        # iRight = max(0, self.select_right(nums, target) - 1)
-        iRight = bisect_right(nums, target) - 1
+        iRight = self.select_right(nums, target) - 1
+        # iRight = bisect_right(nums, target) - 1
         
         return [iLeft, iRight]
 
     def select_left(self, nums, target):
         left = 0
         right = len(nums) - 1
-        ans = 0
+        ans = len(nums)
         while left <= right:
             mid = (left + right) // 2
             if nums[mid] >= target:
@@ -30,7 +30,7 @@ class Solution:
     def select_right(self, nums, target):
         left = 0
         right = len(nums) - 1
-        ans = 0
+        ans = len(nums)
         while left <= right:
             mid = (left + right) // 2
             if nums[mid] > target:
