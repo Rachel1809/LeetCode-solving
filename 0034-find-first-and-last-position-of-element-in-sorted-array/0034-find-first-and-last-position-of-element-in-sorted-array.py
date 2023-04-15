@@ -1,7 +1,7 @@
 class Solution:
     def searchRange(self, nums: List[int], target: int) -> List[int]:
         iLeft = self.select_left(nums, target)
-        iLeft = bisect_left(nums, target)
+        # iLeft = bisect_left(nums, target)
         # bisect_left is built-in function that helps to find the lowest index greater than or equal
         # to target
         
